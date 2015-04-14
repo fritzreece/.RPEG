@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="787.0" style="-fx-background-color: #A51B00;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="31.0" layoutY="38.0" prefHeight="398.0" prefWidth="725.0" style="-fx-background-color: #ffffff;" />
+      <Button layoutX="97.0" layoutY="455.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Start" />
+      <Button layoutX="575.0" layoutY="455.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Quit" />
+      <Button layoutX="294.0" layoutY="455.0" mnemonicParsing="false" text="Help" />
+      <Button layoutX="451.0" layoutY="455.0" mnemonicParsing="false" text="Credits" />
+   </children>
+</Pane>
