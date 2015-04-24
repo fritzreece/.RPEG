@@ -17,10 +17,22 @@
          <font>
             <Font name="Avenir Medium" size="22.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Start your grand adventure" />
+         </tooltip>
       </Button>
-      <Button layoutX="271.0" layoutY="205.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="59.0" text="Help" />
-      <Button layoutX="183.0" layoutY="305.0" mnemonicParsing="false" text="Options" />
-      <Button layoutX="349.0" layoutY="305.0" mnemonicParsing="false" text="Credits" />
+      <Button layoutX="271.0" layoutY="205.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="59.0" text="Help">
+         <tooltip>
+            <Tooltip text="Learn to play" />
+         </tooltip></Button>
+      <Button layoutX="183.0" layoutY="305.0" mnemonicParsing="false" text="Options">
+         <tooltip>
+            <Tooltip text="Options to make your game yours" />
+         </tooltip></Button>
+      <Button layoutX="349.0" layoutY="305.0" mnemonicParsing="false" text="Credits">
+         <tooltip>
+            <Tooltip text="Learn who made the game" />
+         </tooltip></Button>
       <Label layoutX="259.0" layoutY="88.0" prefHeight="34.0" prefWidth="84.0" text=".RPEG">
          <font>
             <Font name="BiauKai" size="31.0" />
