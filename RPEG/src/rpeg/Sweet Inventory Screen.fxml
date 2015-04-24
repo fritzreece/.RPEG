@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.text.*?>
@@ -59,4 +60,7 @@
       </TableView>
       <Pane fx:id="characterView" layoutX="259.0" layoutY="16.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" />
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </Pane>
