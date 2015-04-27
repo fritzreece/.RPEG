@@ -5,7 +5,10 @@
  */
 package rpeg;
 
+import com.sun.javaws.Main;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -25,22 +28,23 @@ public class RPEG extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-   
-       Parent root = FXMLLoader.load(getClass().getResource("UnfinishedMap.fxml"));
-    
-        Scene scene = new Scene(root, 300, 275);
-    
-        primaryStage.setTitle("FXML Welcome");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+   try {
+       StackPane page = (StackPane) FXMLLoader.load(RPEG.class.getResource("CashMunnyAintEvenFunny.fxml"));
+       Scene scene = new Scene(page);
+    primaryStage.setScene(scene);
+            primaryStage.setTitle("FXML is Simple");
+            primaryStage.show();
+    } catch (Exception ex) {
+            Logger.getLogger(RPEG.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        launch(args);
+public static void main(String[] args) {
+        Application.launch(RPEG.class, (java.lang.String[])null);
     }
     
     
