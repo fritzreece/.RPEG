@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -29,7 +30,7 @@ public class RPEG extends Application {
     public void start(Stage primaryStage) throws IOException {
         
    try {
-       StackPane page = (StackPane) FXMLLoader.load(RPEG.class.getResource("CashMunnyAintEvenFunny.fxml"));
+       Pane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
        Scene scene = new Scene(page);
     primaryStage.setScene(scene);
             primaryStage.setTitle("FXML is Simple");
