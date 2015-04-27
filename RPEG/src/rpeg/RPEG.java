@@ -5,9 +5,14 @@
  */
 package rpeg;
 
+import com.sun.javaws.Main;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -21,6 +26,11 @@ public class RPEG extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        try {
+            StackPane page = (StackPane) FXMLLoader.load(Main.class.getResource("simple.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(RPEG.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Button btn = new Button();
         btn.setText("Say 'Burn The Whales'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
