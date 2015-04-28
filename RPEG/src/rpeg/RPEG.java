@@ -33,6 +33,8 @@ public class RPEG extends Application {
        StackPane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
        Scene scene = new Scene(page);
     primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+           
             primaryStage.setTitle(".rpeg");
             primaryStage.show();
     } catch (Exception ex) {
