@@ -30,10 +30,10 @@ public class RPEG extends Application {
     public void start(Stage primaryStage) throws IOException {
         
    try {
-       Pane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
+       StackPane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
        Scene scene = new Scene(page);
     primaryStage.setScene(scene);
-            primaryStage.setTitle("FXML is Simple");
+            primaryStage.setTitle(".rpeg");
             primaryStage.show();
     } catch (Exception ex) {
             Logger.getLogger(RPEG.class.getName()).log(Level.SEVERE, null, ex);
