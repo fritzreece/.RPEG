@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -27,22 +28,25 @@ public class RPEG extends Application {
     
     @Override
 
-    public void start(Stage primaryStage) throws IOException {
-       Parent root = FXMLLoader.load(getClass().getResource("UnfinishedMap.fxml"));
-    
-        Scene scene = new Scene(root, 300, 275);
-    
-        primaryStage.setTitle("FXML Welcome");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public void start(Stage primaryStage) throws IOException {    
+   try {
+       StackPane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
+       Scene scene = new Scene(page);
+    primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            primaryStage.setTitle(".rpeg");
+            primaryStage.show();
+    } catch (Exception ex) {
+            Logger.getLogger(RPEG.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        launch(args);
+public static void main(String[] args) {
+        Application.launch(RPEG.class, (java.lang.String[])null);
     }
     
     
