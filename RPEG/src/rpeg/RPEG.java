@@ -27,13 +27,14 @@ import javafx.stage.Stage;
 public class RPEG extends Application {
     
     @Override
-
-    public void start(Stage primaryStage) throws IOException {    
+    public void start(Stage primaryStage) throws IOException {
+        
    try {
        StackPane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
        Scene scene = new Scene(page);
     primaryStage.setScene(scene);
             primaryStage.setResizable(false);
+           
             primaryStage.setTitle(".rpeg");
             primaryStage.show();
     } catch (Exception ex) {
