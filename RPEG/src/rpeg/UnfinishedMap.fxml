@@ -19,12 +19,30 @@
       </ImageView>
       <Pane prefHeight="663.0" prefWidth="305.0">
          <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Inventory" />
-            <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Inspect" />
-            <Button layoutX="14.0" layoutY="623.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Options" />
-            <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Save" />
-            <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Quit" />
-            <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Map" />
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Inventory">
+               <tooltip>
+                  <Tooltip text="Opens your inventory" />
+               </tooltip></Button>
+            <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Inspect">
+               <tooltip>
+                  <Tooltip text="Check the space your on" />
+               </tooltip></Button>
+            <Button layoutX="14.0" layoutY="623.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Options">
+               <tooltip>
+                  <Tooltip text="Option menu" />
+               </tooltip></Button>
+            <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Save">
+               <tooltip>
+                  <Tooltip text="Save your adventure" />
+               </tooltip></Button>
+            <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Quit">
+               <tooltip>
+                  <Tooltip text="End the game" />
+               </tooltip></Button>
+            <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Map">
+               <tooltip>
+                  <Tooltip text="Open a large map" />
+               </tooltip></Button>
          </children>
       </Pane>
    </children>
