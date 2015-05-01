@@ -34,7 +34,8 @@ public class RPEG extends Application {
        Scene scene = new Scene(page);
     primaryStage.setScene(scene);
             primaryStage.setResizable(false);
-           
+            primaryStage.setWidth(601);
+            primaryStage.setHeight(398);
             primaryStage.setTitle(".rpeg");
             primaryStage.show();
     } catch (Exception ex) {
@@ -45,7 +46,7 @@ public class RPEG extends Application {
 
     /**
      * @param args the command line arguments
-     */
+     */ 
 public static void main(String[] args) {
         Application.launch(RPEG.class, (java.lang.String[])null);
     }
