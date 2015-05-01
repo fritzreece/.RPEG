@@ -30,7 +30,7 @@ public class RPEG extends Application {
     public void start(Stage primaryStage) throws IOException {
         
    try {
-       StackPane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
+       StackPane page = FXMLLoader.load(RPEG.class.getResource("LayeredGUI.fxml"));
        Scene scene = new Scene(page);
     primaryStage.setScene(scene);
             primaryStage.setResizable(false);
