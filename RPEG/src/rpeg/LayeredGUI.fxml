@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" visible="false">
+         <children>
+            <Accordion prefHeight="619.0" prefWidth="202.0">
+               <panes>
+                  <TitledPane animated="false" text="Spells">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion layoutX="-1.0" prefHeight="540.0" prefWidth="202.0">
+                                 <panes>
+                                    <TitledPane animated="false" text="Passive">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="Aggresive">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" prefHeight="665.0" prefWidth="202.0" text="Defensive">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                 </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="Items">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion layoutX="-1.0" prefHeight="567.0" prefWidth="202.0">
+                                 <panes>
+                                    <TitledPane animated="false" text="untitled 1">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="untitled 2">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="untitled 3">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                 </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="Other">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+               </panes>
+            </Accordion>
+         </children>
+      </Pane>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="601.0" visible="false">
+         <children>
+            <Button layoutX="252.0" layoutY="144.0" mnemonicParsing="false" prefHeight="4.0" prefWidth="98.0" text="START">
+               <font>
+                  <Font name="Avenir Medium" size="22.0" />
+               </font>
+            </Button>
+            <Button layoutX="271.0" layoutY="205.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="59.0" text="Help" />
+            <Button layoutX="183.0" layoutY="305.0" mnemonicParsing="false" text="Options" />
+            <Button layoutX="349.0" layoutY="305.0" mnemonicParsing="false" text="Credits" />
+            <Label layoutX="259.0" layoutY="88.0" prefHeight="34.0" prefWidth="84.0" text=".RPEG">
+               <font>
+                  <Font name="BiauKai" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
+         <children>
+            <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0">
+               <tooltip>
+                  <Tooltip text="Affects health and armor" />
+               </tooltip>
+            </ComboBox>
+            <ComboBox layoutX="14.0" layoutY="62.0" prefWidth="150.0">
+               <tooltip>
+                  <Tooltip text="Affects movement" />
+               </tooltip>
+            </ComboBox>
+            <ComboBox layoutX="14.0" layoutY="116.0" prefWidth="150.0">
+               <tooltip>
+                  <Tooltip text="Affects attack power and type" />
+               </tooltip>
+            </ComboBox>
+            <ComboBox layoutX="14.0" layoutY="166.0" prefWidth="150.0">
+               <tooltip>
+                  <Tooltip text="A item to use in battle" />
+               </tooltip>
+            </ComboBox>
+            <Label layoutX="177.0" layoutY="14.0" prefHeight="26.0" prefWidth="60.0" text="Armor" textFill="WHITE">
+               <effect>
+                  <DropShadow height="75.0" radius="48.25" spread="0.65" width="120.0" />
+               </effect>
+               <font>
+                  <Font name="Cochin" size="20.0" />
+               </font>
+            </Label>
+            <TableView layoutX="12.0" layoutY="228.0" prefHeight="200.0" prefWidth="451.0">
+               <columns>
+                  <TableColumn prefWidth="81.0" text="Armor" />
+                  <TableColumn prefWidth="81.0" text="Boots" />
+                  <TableColumn prefWidth="92.0" text="Weapon" />
+                  <TableColumn prefWidth="88.0" text="Use" />
+                  <TableColumn prefWidth="108.0" text="Key Items" />
+               </columns>
+               <tooltip>
+                  <Tooltip text="Double click for item info" />
+               </tooltip>
+            </TableView>
+            <Pane fx:id="characterView" layoutX="259.0" layoutY="16.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="200.0" prefWidth="200.0" text="JustForToolTip">
+                     <tooltip>
+                        <Tooltip text="Look at how handsom you are" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="177.0" layoutY="62.0" prefHeight="26.0" prefWidth="60.0" text="Boots" textFill="WHITE">
+               <effect>
+                  <DropShadow height="75.0" radius="48.25" spread="0.65" width="120.0" />
+               </effect>
+               <font>
+                  <Font name="Cochin" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="176.0" layoutY="116.0" prefHeight="26.0" prefWidth="73.0" text="Weapon" textFill="WHITE">
+               <effect>
+                  <DropShadow height="75.0" radius="48.25" spread="0.65" width="120.0" />
+               </effect>
+               <font>
+                  <Font name="Cochin" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="166.0" prefHeight="26.0" prefWidth="60.0" text="Use" textFill="WHITE">
+               <effect>
+                  <DropShadow height="75.0" radius="48.25" spread="0.65" width="120.0" />
+               </effect>
+               <font>
+                  <Font name="Cochin" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0">
+         <children>
+            <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../Volumes/Documents/dot-RPEGhelp/RPEG/src/rpeg/Textures/old-paper.jpg" />
+               </image>
+            </ImageView>
+            <ImageView id="Map" fx:id="map" fitHeight="769.0" fitWidth="1295.0" layoutX="153.0" layoutY="-81.0" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" onKeyTyped="#keyTyped" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Volumes/Documents/dot-RPEGhelp/RPEG/src/rpeg/Textures/world-map.gif" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="663.0" prefWidth="305.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Inventory">
+                     <tooltip>
+                        <Tooltip text="Opens your inventory" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Inspect">
+                     <tooltip>
+                        <Tooltip text="Check the space your on" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="623.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Options">
+                     <tooltip>
+                        <Tooltip text="Option menu" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Save">
+                     <tooltip>
+                        <Tooltip text="Save your adventure" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Quit">
+                     <tooltip>
+                        <Tooltip text="End the game" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Map">
+                     <tooltip>
+                        <Tooltip text="Open a large map" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</StackPane>
