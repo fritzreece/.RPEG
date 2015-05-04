@@ -8,8 +8,56 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpeg.LayeredGUIController">
    <children>
+      <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0" visible="false">
+         <children>
+            <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Textures/old-paper.jpg" />
+               </image>
+            </ImageView>
+            <ImageView id="Map" fx:id="map" fitHeight="769.0" fitWidth="1295.0" layoutX="153.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Textures/world-map.gif" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="663.0" prefWidth="305.0">
+               <children>
+                  <Button fx:id="InventoryButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#InventoryPane" prefHeight="26.0" prefWidth="77.0" text="Inventory">
+                     <tooltip>
+                        <Tooltip text="Opens your inventory" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Inspect">
+                     <tooltip>
+                        <Tooltip text="Check the space your on" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="623.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Options">
+                     <tooltip>
+                        <Tooltip text="Option menu" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Save">
+                     <tooltip>
+                        <Tooltip text="Save your adventure" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Quit">
+                     <tooltip>
+                        <Tooltip text="End the game" />
+                     </tooltip>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Map">
+                     <tooltip>
+                        <Tooltip text="Open a large map" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" visible="false">
          <children>
             <Accordion prefHeight="619.0" prefWidth="202.0">
@@ -77,55 +125,7 @@
             </Accordion>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0">
-         <children>
-            <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../dot-RPEG/RPEG/src/rpeg/Textures/old-paper.jpg" />
-               </image>
-            </ImageView>
-            <ImageView id="Map" fx:id="map" fitHeight="769.0" fitWidth="1295.0" layoutX="153.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../dot-RPEG/RPEG/src/rpeg/Textures/world-map.gif" />
-               </image>
-            </ImageView>
-            <Pane prefHeight="663.0" prefWidth="305.0">
-               <children>
-                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Inventory">
-                     <tooltip>
-                        <Tooltip text="Opens your inventory" />
-                     </tooltip>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Inspect">
-                     <tooltip>
-                        <Tooltip text="Check the space your on" />
-                     </tooltip>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="623.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Options">
-                     <tooltip>
-                        <Tooltip text="Option menu" />
-                     </tooltip>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Save">
-                     <tooltip>
-                        <Tooltip text="Save your adventure" />
-                     </tooltip>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Quit">
-                     <tooltip>
-                        <Tooltip text="End the game" />
-                     </tooltip>
-                  </Button>
-                  <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Map">
-                     <tooltip>
-                        <Tooltip text="Open a large map" />
-                     </tooltip>
-                  </Button>
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
+      <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
          <children>
             <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0">
                <tooltip>
@@ -163,6 +163,9 @@
                   <TableColumn prefWidth="88.0" text="Use" />
                   <TableColumn prefWidth="108.0" text="Key Items" />
                </columns>
+               <placeholder>
+                   <Label text="No items in inventory" />
+               </placeholder>
                <tooltip>
                   <Tooltip text="Double click for item info" />
                </tooltip>
@@ -206,21 +209,21 @@
             <Insets />
          </opaqueInsets>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="601.0" visible="false">
+      <Pane fx:id="StartPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="601.0" style="-fx-background-color: grey;">
          <children>
-            <Button layoutX="252.0" layoutY="144.0" mnemonicParsing="false" prefHeight="4.0" prefWidth="98.0" text="START">
+            <Button fx:id="StartButton" layoutX="252.0" layoutY="144.0" mnemonicParsing="false" onAction="#NextPane" prefHeight="4.0" prefWidth="98.0" text="START">
                <font>
                   <Font name="Avenir Medium" size="22.0" />
                </font>
             </Button>
-            <Button layoutX="271.0" layoutY="205.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="59.0" text="Help" />
-            <Button layoutX="183.0" layoutY="305.0" mnemonicParsing="false" text="Options" />
-            <Button layoutX="349.0" layoutY="305.0" mnemonicParsing="false" text="Credits" />
+            <Button layoutX="343.0" layoutY="306.0" mnemonicParsing="false" text="Credits" />
             <Label layoutX="259.0" layoutY="88.0" prefHeight="34.0" prefWidth="84.0" text=".RPEG">
                <font>
                   <Font name="BiauKai" size="31.0" />
                </font>
             </Label>
+            <Button layoutX="267.0" layoutY="306.0" mnemonicParsing="false" text="Options" />
+            <Button layoutX="199.0" layoutY="306.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="Help" />
          </children>
       </Pane>
    </children>
