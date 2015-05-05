@@ -25,18 +25,19 @@ import javafx.stage.Stage;
  * @author csstudent
  */
 public class RPEG extends Application {
-    
+    public static Stage primaryStage = new Stage();
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage1) throws IOException {
         
    try {
-       StackPane page = FXMLLoader.load(RPEG.class.getResource("CashMunyAintEvenFunny.fxml"));
+       StackPane page = FXMLLoader.load(RPEG.class.getResource("LayeredGUI.fxml"));
        Scene scene = new Scene(page);
-    primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
-           
-            primaryStage.setTitle(".rpeg");
-            primaryStage.show();
+       primaryStage.setScene(scene);
+       primaryStage.setResizable(false);
+       primaryStage.setWidth(601);
+       primaryStage.setHeight(398);
+       primaryStage.setTitle(".rpeg");
+       primaryStage.show();
     } catch (Exception ex) {
             Logger.getLogger(RPEG.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -45,7 +46,7 @@ public class RPEG extends Application {
 
     /**
      * @param args the command line arguments
-     */
+     */ 
 public static void main(String[] args) {
         Application.launch(RPEG.class, (java.lang.String[])null);
     }
