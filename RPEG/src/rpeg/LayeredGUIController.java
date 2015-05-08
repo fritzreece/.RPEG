@@ -9,8 +9,12 @@
 
 package rpeg;
 
+import java.awt.event.KeyEvent;
+import static java.awt.event.KeyEvent.VK_UP;
+import java.awt.event.KeyListener;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,7 +27,7 @@ import javafx.scene.layout.Pane;
  *
  * @author csstudent
  */
-public class LayeredGUIController implements Initializable {
+public class LayeredGUIController implements Initializable, KeyListener {
     @FXML
     private Pane MapScreen;
     @FXML
@@ -67,6 +71,29 @@ public class LayeredGUIController implements Initializable {
         RPEG.primaryStage.setWidth(948);
         RPEG.primaryStage.setHeight(663);
         MapScreen.setVisible(true);
+    }
+    @FXML 
+    private void quit(ActionEvent event) {
+        Platform.exit();
+    }
+    
+    
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(MapScreen.isVisible()) {
+            map.setX(1000);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
