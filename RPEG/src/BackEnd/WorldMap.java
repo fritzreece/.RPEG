@@ -30,7 +30,7 @@ public class WorldMap {
     public boolean addThing(MapThing thing, int x, int y){
         return tiles[y][x].add(thing);
     }
-    public getTile(int x, int y){
+    public MapTile getTile(int x, int y){
         return tiles[y][x];
     }
 }
