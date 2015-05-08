@@ -22,8 +22,12 @@ public class WorldMap {
         for(int j=0;j<tiles.length;j++){
             MapTile[] mt = tiles[j];
             for(int i=0;i<mt.length;i++){
-                mt[i] = new MapTile(i,j,TileType.GRASS);
+                mt[i] = new MapTile(i,j,TileType.GRASS,this);
             }
         }
+    }
+    //returns true if it succeeds
+    public boolean addThing(MapThing thing, int x, int y){
+        return tiles[y][x].add(thing);
     }
 }
