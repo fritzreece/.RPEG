@@ -10,7 +10,7 @@ import java.io.File;
  * @author Fritz Reece
  */
 public class WorldMap {
-    private MapTile[] tiles;
+    private MapTile[][] tiles;
     public final int width;
     public final int height;
     public final File background;
@@ -18,11 +18,11 @@ public class WorldMap {
         width = dim1;
         height = dim2;
         background = bg;
-        tiles = new MapTile[dim1*dim2];
-        for (int i=0;i<dim2;i++){
-            for(int j=0;j<dim1;j++){
-                //World tiles are stored in this order: left to right, then down a row
-                tiles[i+j] = new MapTile(j,i,TileType.GRASS);
+        tiles = new MapTile[dim1][dim2];
+        for(int j=0;j<tiles.length;j++){
+            MapTile[] mt = tiles[j];
+            for(int i=0;i<mt.length;i++){
+                mt[i] = new MapTile(i,j,TileType.GRASS);
             }
         }
     }
