@@ -5,25 +5,25 @@
  */
 package rpeg;
 
-import java.awt.event.KeyEvent;
-import static java.awt.event.KeyEvent.VK_UP;
-import java.awt.event.KeyListener;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+
 
 /**
  * FXML Controller class
  *
  * @author csstudent
  */
-public class LayeredGUIController implements Initializable, KeyListener {
+public class LayeredGUIController implements Initializable {
     @FXML
     private Pane MapScreen;
     @FXML
@@ -38,14 +38,18 @@ public class LayeredGUIController implements Initializable, KeyListener {
     private Button StartButton;
     @FXML
     private Button InventoryButton;
-
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+          map.setFocusTraversable(true);
+             
+    }         
+   
         // TODO
-    }    
+        
 
     @FXML
     private void InventoryPane(ActionEvent event) {
@@ -73,24 +77,14 @@ public class LayeredGUIController implements Initializable, KeyListener {
         Platform.exit();
     }
     
-    
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    @FXML
+    private void handleKeyPressed(KeyEvent e) {
+        
     }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if(MapScreen.isVisible()) {
-            map.setX(1000);
-        }
-    }
 
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
 
