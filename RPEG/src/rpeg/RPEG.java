@@ -5,6 +5,7 @@
  */
 package rpeg;
 
+import BackEnd.WorldMap;
 import com.sun.javaws.Main;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -30,6 +31,8 @@ public class RPEG extends Application {
     public void start(Stage primaryStage1) throws IOException {
         
    try {
+       WorldMap w = new WorldMap(601, 398);
+       w.createMap();
        StackPane page = FXMLLoader.load(RPEG.class.getResource("LayeredGUI.fxml"));
        Scene scene = new Scene(page);
        primaryStage.setScene(scene);
