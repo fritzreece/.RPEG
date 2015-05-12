@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.AttributedCharacterIterator;
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 /**
  *
  * @author Fritz Reece
@@ -46,7 +47,7 @@ public class WorldMap {
     public MapTile getTile(int x, int y){
         return tiles[y][x];
     }
-    public void createMap() {
+    public void createMap() throws IOException {
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         
         Graphics2D ig2 = bi.createGraphics();
@@ -54,9 +55,10 @@ public class WorldMap {
             for(int j = 0; j <=height/40; j++) {
                 if(tiles[i][j].getTileType() == TileType.GRASS) {
                     BufferedImage img = null;
+                    JPanel test = new JPanel();
                     try {
-                     img = ImageIO.read(new File("../rpeg.Textures/grassTile1.jpg"));
-                     
+                     img = ImageIO.read(new File("../rpet/Textures/grassTile1.jpg"));
+                     ig2.drawImage(img, i*40, j*40, test);
                         } catch (IOException e) {
                         }
                    // ig2.drawImage("");
@@ -64,6 +66,7 @@ public class WorldMap {
                 }
                 }
             }
+        ImageIO.write(bi, "PNG", new File("../rpeg/Textures/map.png"));
         }
         
 
