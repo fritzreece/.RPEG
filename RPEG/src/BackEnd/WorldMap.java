@@ -51,22 +51,24 @@ public class WorldMap {
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         
         Graphics2D ig2 = bi.createGraphics();
-        for(int i = 0; i <= width/40; i++) {
-            for(int j = 0; j <=height/40; j++) {
+        for(int i = 0; i < width/40; i++) {
+            for(int j = 0; j < height/40; j++) {
                 if(tiles[i][j].getTileType() == TileType.GRASS) {
                     BufferedImage img = null;
                     JPanel test = new JPanel();
                     try {
-                     img = ImageIO.read(new File("../rpet/Textures/grassTile1.jpg"));
+                   String path = getClass().getResource("grassTile1.jpg").toString();
+                     img = ImageIO.read(new File("grassTile1.jpg"));
                      ig2.drawImage(img, i*40, j*40, test);
                         } catch (IOException e) {
+                            System.out.println("failure");
                         }
                    // ig2.drawImage("");
                     
                 }
                 }
             }
-        ImageIO.write(bi, "PNG", new File("../rpeg/Textures/map.png"));
+        ImageIO.write(bi, "PNG", new File("Textures/map.png"));
         }
         
 
