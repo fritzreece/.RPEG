@@ -13,9 +13,12 @@ public class MapTile {
     public final int xCoord;
     public final int yCoord;
     private TileType tileType;
-    public MapTile(int xCoord, int yCoord, TileType t){
+    public MapTile(int xCoord, int yCoord, TileType t, WorldMap w){
         this.xCoord = xCoord;
         this.yCoord = yCoord;
         tileType = t;
+    }
+    public TileType getTileType() {
+        return this.tileType;
     }
 }
