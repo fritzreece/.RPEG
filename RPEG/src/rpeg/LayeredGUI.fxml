@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="663.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpeg.LayeredGUIController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="3000.0" prefWidth="2999.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpeg.LayeredGUIController">
    <children>
       <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0" visible="false">
          <children>
@@ -17,9 +17,9 @@
                   <Image url="@Textures/old-paper.jpg" />
                </image>
             </ImageView>
-            <ImageView id="Map" fx:id="map" fitHeight="769.0" fitWidth="1295.0" layoutX="153.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Map" fx:id="map" fitHeight="1000.0" fitWidth="1000.0" layoutX="153.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Textures/world-map.gif" />
+                  <Image url="@Textures/TestMap.jpg" />
                </image>
             </ImageView>
             <Pane prefHeight="663.0" prefWidth="305.0">
