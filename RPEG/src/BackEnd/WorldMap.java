@@ -58,7 +58,7 @@ public class WorldMap {
                     JPanel test = new JPanel();
                     try {
                    String path = getClass().getResource("grassTile1.jpg").toString();
-                     img = ImageIO.read(new File("grassTile1.jpg"));
+                     img = ImageIO.read(new File(path));
                      ig2.drawImage(img, i*40, j*40, test);
                         } catch (IOException e) {
                             System.out.println("failure");
