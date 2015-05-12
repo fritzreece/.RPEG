@@ -27,11 +27,11 @@ public class WorldMap {
     private MapTile[][] tiles;
     public final int width;
     public final int height;
-    public final File background;
-    public WorldMap(int dim1, int dim2, File bg){
+  //  public final File background;
+    public WorldMap(int dim1, int dim2){
         width = dim1;
         height = dim2;
-        background = bg;
+        //background = bg;
         tiles = new MapTile[dim1/40][dim2/40];
         for(int j=0;j<tiles.length;j++){
             MapTile[] mt = tiles[j];
