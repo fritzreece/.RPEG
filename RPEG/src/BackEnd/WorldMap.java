@@ -33,4 +33,12 @@ public class WorldMap {
     public MapTile getTile(int x, int y){
         return tiles[y][x];
     }
+    
+   public int getWidth() {
+        return width;
+        
+    }
+    public int getHeight() {
+        return height;
+    }
 }
