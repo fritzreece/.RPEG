@@ -9,9 +9,14 @@
 
 package rpeg;
 
+
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,6 +27,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javax.imageio.stream.ImageInputStream;
 
 
 /**
@@ -51,8 +57,7 @@ public class LayeredGUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
           map.setFocusTraversable(true);
-          Image image = new Image("map.png");
-          map.setImage(image);
+          
     }         
    
         // TODO
@@ -77,7 +82,8 @@ public class LayeredGUIController implements Initializable {
         StartPane.setOpacity(0);
         RPEG.primaryStage.setWidth(948);
         RPEG.primaryStage.setHeight(663);
-        MapScreen.setVisible(true);
+        MapScreen.setVisible(true); 
+       
     }
     @FXML 
     private void quit(ActionEvent event) {
