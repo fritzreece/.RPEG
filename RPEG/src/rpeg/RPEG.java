@@ -36,7 +36,7 @@ public class RPEG extends Application {
        StackPane page = FXMLLoader.load(RPEG.class.getResource("LayeredGUI.fxml"));
        Scene scene = new Scene(page);
        primaryStage.setScene(scene);
-       primaryStage.setResizable(false);
+       primaryStage.setResizable(true);
        primaryStage.setWidth(601);
        primaryStage.setHeight(398);
        primaryStage.setTitle(".rpeg");
