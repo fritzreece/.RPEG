@@ -4,15 +4,18 @@
  * and open the template in the editor.
  */
 package BackEnd;
-import java.net.URL;
+
 /**
  *
  * @author csstudent
  */
-public interface MapMob extends MapThing{
-    public void moveTo();
-    public void turnTowards(Direction d);
-    public void despawn();
-    public Direction getDirection();
-    public boolean move();
+public interface MapThing {
+    int getX();
+    int getY();
+    void moveTo(int x, int y);
+    boolean transversable();
+    boolean deleteThis();
+    void destroy();
+    void interact();
+    void get();
 }
