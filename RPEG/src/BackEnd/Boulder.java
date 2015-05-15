@@ -32,7 +32,7 @@ public class Boulder implements MapThing{
         return yCoord;
     }
     @Override
-    public void moveTo(int x, int y) {
+    public void setPosition(int x, int y){
         destroy();
         
     }

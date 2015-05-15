@@ -12,7 +12,8 @@ package BackEnd;
 public interface MapThing {
     int getX();
     int getY();
-    void moveTo(int x, int y);
+    //Hard set the position; shouldn't ever fail under normal circumstances
+    void setPosition(int x, int y);
     boolean transversable();
     boolean deleteThis();
     void destroy();
