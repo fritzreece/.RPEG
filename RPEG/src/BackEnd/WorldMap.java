@@ -51,7 +51,7 @@ public class WorldMap {
 
     public void createMap() throws IOException {
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-
+        tiles[1][1].setTileType(TileType.WATER);
         Graphics2D ig2 = bi.createGraphics();
         for (int i = 0; i < width / 40; i++) {
             for (int j = 0; j < height / 40; j++) {
@@ -60,6 +60,19 @@ public class WorldMap {
                     JPanel test = new JPanel();
                     try {
                         InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile1.jpg");
+                        img = ImageIO.read(is);
+                        ig2.drawImage(img, i * 40, j * 40, test);
+                    } catch (IOException ex) {
+                        Logger.getLogger(WorldMap.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                   // ig2.drawImage("");
+
+                }
+                if (tiles[i][j].getTileType() == TileType.WATER) {
+                    BufferedImage img = null;
+                    JPanel test = new JPanel();
+                    try {
+                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/OceanTile.png");
                         img = ImageIO.read(is);
                         ig2.drawImage(img, i * 40, j * 40, test);
                     } catch (IOException ex) {
