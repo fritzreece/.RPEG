@@ -49,14 +49,15 @@ public class Player implements MapMob{
     }
 
     @Override
-    public void moveTo(int x, int y) {
+    public boolean moveTo(int x, int y) {
         this.xCoord = x;
         this.yCoord = y;
+        return true;
     }
 
     @Override
     public boolean transversable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
@@ -84,14 +85,13 @@ public class Player implements MapMob{
     }
 
     @Override
-    public void moveTo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public void despawn() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
+    @Override
+    public void setPosition(int x, int y){
+        xCoord = x;
+        yCoord = y;
+    }
 }
