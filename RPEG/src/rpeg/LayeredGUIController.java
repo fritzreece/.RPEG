@@ -51,7 +51,7 @@ public class LayeredGUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
           map.setFocusTraversable(true);
-          Image image = new Image("map.png");
+          Image image = new Image("file:map.png");
           map.setImage(image);
     }         
    
