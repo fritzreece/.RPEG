@@ -51,7 +51,26 @@ public class WorldMap {
 
     public void createMap() throws IOException {
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        tiles[0][0].setTileType(TileType.WATER);
+        tiles[0][1].setTileType(TileType.WATER);
+        tiles[0][2].setTileType(TileType.WATER);
+        tiles[1][0].setTileType(TileType.WATER);
         tiles[1][1].setTileType(TileType.WATER);
+        tiles[1][2].setTileType(TileType.WATER);
+        tiles[0][3].setTileType(TileType.WATER);
+        tiles[0][4].setTileType(TileType.WATER);
+        tiles[2][0].setTileType(TileType.WATER);
+        tiles[3][0].setTileType(TileType.WATER);
+        tiles[4][0].setTileType(TileType.WATER);
+        tiles[2][1].setTileType(TileType.WATER);
+        tiles[7][3].setTileType(TileType.WALL);
+        tiles[7][4].setTileType(TileType.WALL);
+        tiles[7][5].setTileType(TileType.WALL);
+        tiles[7][6].setTileType(TileType.WALL);
+        tiles[7][7].setTileType(TileType.WALL);
+        tiles[7][8].setTileType(TileType.WALL);
+        tiles[7][9].setTileType(TileType.WALL);
+        tiles[7][10].setTileType(TileType.WALL);
         Graphics2D ig2 = bi.createGraphics();
         for (int i = 0; i < width / 40; i++) {
             for (int j = 0; j < height / 40; j++) {
@@ -73,6 +92,19 @@ public class WorldMap {
                     JPanel test = new JPanel();
                     try {
                         InputStream is = getClass().getResourceAsStream("/rpeg/Textures/OceanTile.png");
+                        img = ImageIO.read(is);
+                        ig2.drawImage(img, i * 40, j * 40, test);
+                    } catch (IOException ex) {
+                        Logger.getLogger(WorldMap.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                   // ig2.drawImage("");
+
+                }
+                if (tiles[i][j].getTileType() == TileType.WALL) {
+                    BufferedImage img = null;
+                    JPanel test = new JPanel();
+                    try {
+                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/WallTile.gif");
                         img = ImageIO.read(is);
                         ig2.drawImage(img, i * 40, j * 40, test);
                     } catch (IOException ex) {
