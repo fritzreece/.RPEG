@@ -10,7 +10,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="1500.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpeg.LayeredGUIController">
    <children>
-      <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0">
+      <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0" visible="false">
          <children>
             <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
                <image>
@@ -58,7 +58,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" visible="false">
          <children>
             <Accordion prefHeight="619.0" prefWidth="202.0">
                <panes>
@@ -125,7 +125,7 @@
             </Accordion>
          </children>
       </Pane>
-      <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;">
+      <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
          <children>
             <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0">
                <tooltip>
