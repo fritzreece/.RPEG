@@ -21,4 +21,9 @@ public class MapTile {
     public TileType getTileType() {
         return this.tileType;
     }
+    public void setTileType(TileType t) {
+        tileType = t;
+    }
+    
+    
 }
