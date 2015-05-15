@@ -31,7 +31,7 @@ public class RPEG extends Application {
     public void start(Stage primaryStage1) throws IOException {
         
    try {
-       WorldMap w = new WorldMap(601, 398);
+       WorldMap w = new WorldMap(2000, 800);
        w.createMap();
        StackPane page = FXMLLoader.load(RPEG.class.getResource("LayeredGUI.fxml"));
        Scene scene = new Scene(page);

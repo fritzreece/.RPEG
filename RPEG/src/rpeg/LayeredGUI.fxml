@@ -17,7 +17,7 @@
                   <Image url="@Textures/old-paper.jpg" />
                </image>
             </ImageView>
-            <ImageView id="Map" fx:id="map" fitHeight="1000.0" fitWidth="1000.0" layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Map" fx:id="map" layoutX="250.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../map.png" />
                </image>
