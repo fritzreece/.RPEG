@@ -9,9 +9,11 @@ import java.net.URL;
  *
  * @author csstudent
  */
-public interface MapMob {
-    public void moveTo();
-    public void turnToward();
-    public URL getSprite();
+public interface MapMob extends MapThing{
+    public void turnTowards(Direction d);
     public void despawn();
+    public Direction getDirection();
+    public boolean move();
+    //Can fail under certain conditions
+    public boolean moveTo(int x, int y);
 }

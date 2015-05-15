@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,6 +25,7 @@ import javax.swing.JPanel;
 public class WorldMap {
 
     private MapTile[][] tiles;
+    private List<MapMob> mobs;
     public final int width;
     public final int height;
 
@@ -33,6 +36,7 @@ public class WorldMap {
         height = dim2;
         //background = bg;
         tiles = new MapTile[dim1 / 40][dim2 / 40];
+        mobs = new ArrayList<>();
         for (int j = 0; j < tiles.length; j++) {
             MapTile[] mt = tiles[j];
             for (int i = 0; i < mt.length; i++) {
@@ -117,6 +121,11 @@ public class WorldMap {
         }
         File mapFile = new File("map.png");
         ImageIO.write(bi, "PNG", mapFile);
+    }
+    
+    public void addMob(MapMob m, int posX, int posY){
+        mobs.add(m);
+        m.setPosition(posX, posY);
     }
 
 }
