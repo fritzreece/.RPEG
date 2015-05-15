@@ -58,7 +58,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" visible="false">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0">
          <children>
             <Accordion prefHeight="619.0" prefWidth="202.0">
                <panes>
@@ -125,7 +125,7 @@
             </Accordion>
          </children>
       </Pane>
-      <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
+      <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;">
          <children>
             <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0">
                <tooltip>
