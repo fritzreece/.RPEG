@@ -11,8 +11,8 @@ package BackEnd;
  */
 public class Bar {
     
-    public void updateBar(int max, int current, Combatant combatant){
-        
+    public void updateBar(Combatant combatant){
+        combatant.attack(combatant.getAtk(), combatant.getDef());
         
     }
 }
