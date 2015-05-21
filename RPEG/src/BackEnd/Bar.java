@@ -11,7 +11,7 @@ package BackEnd;
  */
 public class Bar {
     
-    public void updateBar(int max, int current){
+    public void updateBar(int max, int current, Combatant combatant){
         
         
     }
