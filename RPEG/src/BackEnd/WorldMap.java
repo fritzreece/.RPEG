@@ -82,7 +82,7 @@ public class WorldMap {
                     BufferedImage img = null;
                     JPanel test = new JPanel();
                     try {
-                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile2.png");
+                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile1.jpg");
                         img = ImageIO.read(is);
                         ig2.drawImage(img, i * 40, j * 40, test);
                     } catch (IOException ex) {
