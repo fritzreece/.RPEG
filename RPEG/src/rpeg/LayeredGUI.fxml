@@ -58,7 +58,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" visible="false">
+      <Pane fx:id="CombatScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" visible="false">
          <children>
             <Accordion prefHeight="619.0" prefWidth="202.0">
                <panes>
