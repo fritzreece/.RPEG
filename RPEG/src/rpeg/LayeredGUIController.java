@@ -9,6 +9,7 @@
 
 package rpeg;
 
+import BackEnd.Combatant;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -42,7 +43,9 @@ public class LayeredGUIController implements Initializable {
     private Button StartButton;
     @FXML
     private Button InventoryButton;
-   
+    @FXML
+    private Button hitButton;
+    
     /**
      * Initializes the controller class.
      */
@@ -88,7 +91,11 @@ public class LayeredGUIController implements Initializable {
             
         }
     
-
+    @FXML
+    private void hit(Combatant combatant){
+        
+        
+    }
 
 }
 
