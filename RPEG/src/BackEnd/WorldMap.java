@@ -15,8 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  *
@@ -82,7 +80,7 @@ public class WorldMap {
                     BufferedImage img = null;
                     JPanel test = new JPanel();
                     try {
-                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile1.jpg");
+                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile2.jpg");
                         img = ImageIO.read(is);
                         ig2.drawImage(img, i * 40, j * 40, test);
                     } catch (IOException ex) {

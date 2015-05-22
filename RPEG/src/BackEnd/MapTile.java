@@ -24,6 +24,12 @@ public class MapTile {
     public void setTileType(TileType t) {
         tileType = t;
     }
+    public boolean canCross() {
+        if(this.tileType == TileType.WALL || this.tileType == TileType.WATER) {
+            return false;
+        }
+        return true;
+    }
     
     
 }

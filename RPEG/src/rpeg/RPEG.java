@@ -26,17 +26,19 @@ import javafx.stage.Stage;
  * @author csstudent
  */
 public class RPEG extends Application {
+    public static WorldMap w;
     public static Stage primaryStage = new Stage();
     @Override
     public void start(Stage primaryStage1) throws IOException {
         
    try {
-       WorldMap w = new WorldMap(2000, 800);
+       w = new WorldMap(2000, 800);
        w.createMap();
        StackPane page = FXMLLoader.load(RPEG.class.getResource("LayeredGUI.fxml"));
+       
        Scene scene = new Scene(page);
        primaryStage.setScene(scene);
-       primaryStage.setResizable(true);
+       primaryStage.setResizable(false);
        primaryStage.setWidth(601);
        primaryStage.setHeight(398);
        primaryStage.setTitle(".rpeg");
@@ -45,8 +47,7 @@ public class RPEG extends Application {
             Logger.getLogger(RPEG.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-
+ 
     /**
      * @param args the command line arguments
      */ 
