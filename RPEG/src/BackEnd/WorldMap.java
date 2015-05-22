@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -80,7 +82,7 @@ public class WorldMap {
                     BufferedImage img = null;
                     JPanel test = new JPanel();
                     try {
-                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile2.jpg");
+                        InputStream is = getClass().getResourceAsStream("/rpeg/Textures/grassTile2.png");
                         img = ImageIO.read(is);
                         ig2.drawImage(img, i * 40, j * 40, test);
                     } catch (IOException ex) {
@@ -123,7 +125,7 @@ public class WorldMap {
     
     public void addMob(MapMob m, int posX, int posY){
         mobs.add(m);
-        m.setPosition(posX, posY);
+       // m.setPosition(posX, posY);
     }
 
 }
