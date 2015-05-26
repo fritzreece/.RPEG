@@ -158,7 +158,7 @@ public class LayeredGUIController implements Initializable {
      
         
      if(e.getCode() == KeyCode.UP ){
-        if(y > 0 &&  w.getTile((y/40) - 1, (x-250)/40).canCross()) {
+        if(y > 0 &&  w.getTile(((int) (y-map.getLayoutY())/40) - 1, (int) ((x - 250 - (map.getLayoutX() - 250))/40)).canCross()) {
         Player.setLayoutY(Player.getLayoutY() - 40);
         
         }
@@ -171,18 +171,18 @@ public class LayeredGUIController implements Initializable {
         }
      }
     else if(e.getCode() == KeyCode.DOWN) {
-        if(y < 580 && w.getTile((y/40) + 1, (x-250)/40).canCross()) {
+        if(y < 580 && w.getTile((int) (y-map.getLayoutY())/40 + 1, (int) (x - 250 - (map.getLayoutX() - 250))/40).canCross()) {
         Player.setLayoutY(Player.getLayoutY() + 40); 
-        System.out.println(y);
+        System.out.println(map.getLayoutY());
         }
         if(y == 560) {
-          System.out.println(y);
+          
               map.setLayoutY(map.getLayoutY() - 560);
               Player.setLayoutY(0); 
 
         }
     }
-     if(e.getCode() == KeyCode.RIGHT && x < 860 && w.getTile((y/40) , ((x-250)/40)+1).canCross()){
+     if(e.getCode() == KeyCode.RIGHT && x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()){
         
         Player.setLayoutX(Player.getLayoutX() + 40);     
         }
