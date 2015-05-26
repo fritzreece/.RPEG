@@ -164,7 +164,8 @@ public class LayeredGUIController implements Initializable {
         }
         if(y == 0) {
           if(!(map.getLayoutY() == 0)) {
-              map.setLayoutY(map.getLayoutY() + 560);
+              map.setLayoutY(map.getLayoutY() + 600);
+              Player.setLayoutY(600); 
           }
           
         
@@ -175,9 +176,9 @@ public class LayeredGUIController implements Initializable {
         Player.setLayoutY(Player.getLayoutY() + 40); 
         System.out.println(map.getLayoutY());
         }
-        if(y == 560) {
+        if(y == 600) {
           
-              map.setLayoutY(map.getLayoutY() - 560);
+              map.setLayoutY(map.getLayoutY() - 600);
               Player.setLayoutY(0); 
 
         }
@@ -186,7 +187,7 @@ public class LayeredGUIController implements Initializable {
         
         Player.setLayoutX(Player.getLayoutX() + 40);     
         }
-    else if(e.getCode() == KeyCode.LEFT && x > 250 && w.getTile((y/40), ((x-250)/40)-1).canCross()){
+    else if(e.getCode() == KeyCode.LEFT && x > 250 && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()){
         
         Player.setLayoutX(Player.getLayoutX() - 40);     
         }
