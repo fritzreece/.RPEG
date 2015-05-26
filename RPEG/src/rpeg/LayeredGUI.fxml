@@ -127,6 +127,7 @@
       </Pane>
       <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
          <children>
+            <Button fx:id="hitButton" layoutX="-7.0" layoutY="-8.0" mnemonicParsing="false" opacity="0.0" prefHeight="462.0" prefWidth="488.0" text="Button" />
             <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0">
                <tooltip>
                   <Tooltip text="Affects health and armor" />
@@ -209,7 +210,7 @@
             <Insets />
          </opaqueInsets>
       </Pane>
-      <Pane fx:id="StartPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="601.0" style="-fx-background-color: grey;">
+      <Pane fx:id="StartPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="601.0" style="-fx-background-color: grey;" visible="false">
          <children>
             <Button fx:id="StartButton" layoutX="252.0" layoutY="144.0" mnemonicParsing="false" onAction="#NextPane" prefHeight="4.0" prefWidth="98.0" text="START">
                <font>
