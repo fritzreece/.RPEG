@@ -76,6 +76,7 @@ public class LayeredGUIController implements Initializable {
           map.setImage(image);
           populateMap();
           map.requestFocus();
+          map.
     }         
    
         // TODO
@@ -184,9 +185,15 @@ public class LayeredGUIController implements Initializable {
 
         }
     }
-     if(e.getCode() == KeyCode.RIGHT && x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()){
-        
-        Player.setLayoutX(Player.getLayoutX() + 40);     
+     if(e.getCode() == KeyCode.RIGHT){
+        if ( x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()) {
+        Player.setLayoutX(Player.getLayoutX() + 40); 
+        System.out.println(Player.getLayoutX());
+        }
+        if(x == 890) {
+            map.setX(map.getLayoutX() - 890);
+            Player.setLayoutX(250);
+        }
         }
     else if(e.getCode() == KeyCode.LEFT && x > 250 && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()){
         

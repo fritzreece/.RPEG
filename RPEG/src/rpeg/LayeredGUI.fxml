@@ -10,6 +10,76 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="1500.0" prefWidth="2000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpeg.LayeredGUIController">
    <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" style="-fx-background-image: &quot;rpeg.Texture/BattleBackground.png&quot;; -fx-background-repeat: stretch; -fx-background-position: center center;" visible="false">
+         <children>
+            <Button fx:id="hitButton" mnemonicParsing="false" opacity="0.0" prefHeight="462.0" prefWidth="488.0" text="Button" />
+            <Accordion prefHeight="619.0" prefWidth="202.0">
+               <panes>
+                  <TitledPane animated="false" text="Spells">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion layoutX="-1.0" prefHeight="540.0" prefWidth="202.0">
+                                 <panes>
+                                    <TitledPane animated="false" text="Passive">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="Aggresive">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" prefHeight="665.0" prefWidth="202.0" text="Defensive">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                 </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="Items">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion layoutX="-1.0" prefHeight="567.0" prefWidth="202.0">
+                                 <panes>
+                                    <TitledPane animated="false" text="untitled 1">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="untitled 2">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" text="untitled 3">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                 </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="Other">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+               </panes>
+            </Accordion>
+            <Label layoutX="216.0" layoutY="14.0" prefHeight="25.0" prefWidth="60.0" text="Health" />
+            <Label fx:id="currentHealth" layoutX="276.0" layoutY="18.0" text="Current" />
+         </children>
+      </Pane>
       <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0" visible="false">
          <children>
             <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
@@ -127,7 +197,6 @@
       </Pane>
       <Pane fx:id="InventoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="474.0" style="-fx-background-color: #A51B00;" visible="false">
          <children>
-            <Button fx:id="hitButton" layoutX="-7.0" layoutY="-8.0" mnemonicParsing="false" opacity="0.0" prefHeight="462.0" prefWidth="488.0" text="Button" />
             <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0">
                <tooltip>
                   <Tooltip text="Affects health and armor" />
@@ -225,75 +294,6 @@
             </Label>
             <Button layoutX="267.0" layoutY="306.0" mnemonicParsing="false" text="Options" />
             <Button layoutX="199.0" layoutY="306.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="Help" />
-         </children>
-      </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" style="-fx-background-image: &quot;rpeg.Texture/BattleBackground.png&quot;; -fx-background-repeat: stretch; -fx-background-position: center center;">
-         <children>
-            <Accordion prefHeight="619.0" prefWidth="202.0">
-               <panes>
-                  <TitledPane animated="false" text="Spells">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Accordion layoutX="-1.0" prefHeight="540.0" prefWidth="202.0">
-                                 <panes>
-                                    <TitledPane animated="false" text="Passive">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" text="Aggresive">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" prefHeight="665.0" prefWidth="202.0" text="Defensive">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </TitledPane>
-                                 </panes>
-                              </Accordion>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-                  <TitledPane animated="false" text="Items">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Accordion layoutX="-1.0" prefHeight="567.0" prefWidth="202.0">
-                                 <panes>
-                                    <TitledPane animated="false" text="untitled 1">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" text="untitled 2">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" text="untitled 3">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </TitledPane>
-                                 </panes>
-                              </Accordion>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-                  <TitledPane animated="false" text="Other">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                     </content>
-                  </TitledPane>
-               </panes>
-            </Accordion>
-            <Label layoutX="216.0" layoutY="14.0" prefHeight="25.0" prefWidth="60.0" text="Health" />
-            <Label fx:id="currentHealth" layoutX="276.0" layoutY="18.0" text="Current" />
          </children>
       </Pane>
    </children>
