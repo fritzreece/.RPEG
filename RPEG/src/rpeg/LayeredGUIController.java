@@ -75,6 +75,7 @@ public class LayeredGUIController implements Initializable {
           Image image = new Image("file:map.png");
           map.setImage(image);
           populateMap();
+          map.requestFocus();
     }         
    
         // TODO
