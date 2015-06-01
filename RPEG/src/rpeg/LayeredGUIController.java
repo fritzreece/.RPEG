@@ -148,6 +148,9 @@ public class LayeredGUIController implements Initializable {
         Platform.exit();
     }
     
+    private void paintMonsters(){
+        
+    }
 
 
     @FXML
@@ -212,7 +215,7 @@ public class LayeredGUIController implements Initializable {
      
     x = (int) Player.getLayoutX();
     y = (int) Player.getLayoutY();
-    if(monsterOverlap((x-250)/40, y/40)) {
+    if(monsterOverlap((int) ((x-250- (map.getLayoutX() - 250))/40), (int) ((y-map.getLayoutY())/40))) {
             MapScreen.setVisible(false);
             RPEG.primaryStage.setWidth(1226);
         RPEG.primaryStage.setHeight(730);

@@ -82,14 +82,14 @@
       </Pane>
       <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0" visible="false">
          <children>
-            <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
-               <image>
-                  <Image url="@Textures/old-paper.jpg" />
-               </image>
-            </ImageView>
             <ImageView id="Map" fx:id="map" layoutX="250.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../map.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="688.0" fitWidth="254.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Textures/old-paper.jpg" />
                </image>
             </ImageView>
             <Pane prefHeight="663.0" prefWidth="305.0">
