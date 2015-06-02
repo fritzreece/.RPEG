@@ -10,6 +10,7 @@
 package rpeg;
 
 
+import BackEnd.MapMob;
 import BackEnd.Monster;
 import BackEnd.TileType;
 import BackEnd.WorldMap;
@@ -76,7 +77,7 @@ public class LayeredGUIController implements Initializable {
           map.setImage(image);
           populateMap();
           map.requestFocus();
-        
+          paintMonsters();
     }         
    
         // TODO
@@ -149,7 +150,14 @@ public class LayeredGUIController implements Initializable {
     }
     
     private void paintMonsters(){
-        
+        for(Monster m : MobsObjects){
+            if((m.getX()*40 > map.getLayoutX() && map.getLayoutX()+600 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+890> m.getX()*40)){
+                Mobs.get(MobsObjects.indexOf(m)).setVisible(true);
+            }
+            else{
+                Mobs.get(MobsObjects.indexOf(m)).setVisible(false);
+            }
+        }
     }
 
 
@@ -171,6 +179,7 @@ public class LayeredGUIController implements Initializable {
           if(!(map.getLayoutY() == 0)) {
               map.setLayoutY(map.getLayoutY() + 600);
               Player.setLayoutY(600); 
+              paintMonsters();
           }
           
         
@@ -185,6 +194,7 @@ public class LayeredGUIController implements Initializable {
           
               map.setLayoutY(map.getLayoutY() - 600);
               Player.setLayoutY(0); 
+              paintMonsters();
 
         }
     }
@@ -196,6 +206,7 @@ public class LayeredGUIController implements Initializable {
         if(x == 890) {
             map.setLayoutX(map.getLayoutX() - 890);
             Player.setLayoutX(250);
+            paintMonsters();
         }
         }
     else if(e.getCode() == KeyCode.LEFT){
@@ -208,6 +219,7 @@ public class LayeredGUIController implements Initializable {
            if (!(map.getLayoutX() == 250)) {
             map.setLayoutX(map.getLayoutX() + 890);
             Player.setLayoutX(890);
+            paintMonsters();
         }
         }
         }
