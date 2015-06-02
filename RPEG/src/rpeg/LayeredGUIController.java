@@ -10,6 +10,7 @@
 package rpeg;
 
 
+import BackEnd.Player;
 import BackEnd.Monster;
 import BackEnd.TileType;
 import BackEnd.WorldMap;
@@ -202,6 +203,24 @@ public class LayeredGUIController implements Initializable {
             CombatScreen.setVisible(true);
         }
     }
+    
+    public static void delay(double seconds){
+		long t0;
+		long t1;
+		t0= System.currentTimeMillis();
+		do{
+			t1= System.currentTimeMillis();
+		}
+		while(t1-t0 < 1000 * seconds);
+		return;
+    }
+    
+    public void hit(){
+        int monsterHealth = mob.getHealth();
+        int playerHealth = character.getHealth();
+    
+    }
+    
 }
 
 
@@ -210,6 +229,8 @@ public class LayeredGUIController implements Initializable {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//setText? settext?
 
 
     
