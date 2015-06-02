@@ -151,7 +151,7 @@ public class LayeredGUIController implements Initializable {
     
     private void paintMonsters(){
         for(Monster m : MobsObjects){
-            if((m.getX()*40 > map.getLayoutX() && map.getLayoutX()+600 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+890> m.getX()*40)){
+            if((m.getX()*40 > map.getLayoutX() - 250  && map.getLayoutX()+600 -250 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+900> m.getY()*40)){
                 Mobs.get(MobsObjects.indexOf(m)).setVisible(true);
             }
             else{
@@ -170,8 +170,8 @@ public class LayeredGUIController implements Initializable {
          
      
         
-     if(e.getCode() == KeyCode.UP ){
-        if(y > 0 &&  w.getTile(((int) (y-map.getLayoutY())/40) - 1, (int) ((x - 250 - (map.getLayoutX() - 250))/40)).canCross()) {
+     if(e.getCode() == KeyCode.UP  &&  w.getTile(((int) (y-map.getLayoutY())/40) - 1, (int) ((x - 250 - (map.getLayoutX() - 250))/40)).canCross()){
+        if(y > 0) {
         Player.setLayoutY(Player.getLayoutY() - 40);
         
         }
@@ -185,8 +185,8 @@ public class LayeredGUIController implements Initializable {
         
         }
      }
-    else if(e.getCode() == KeyCode.DOWN) {
-        if(y < 580 && w.getTile((int) (y-map.getLayoutY())/40 + 1, (int) (x - 250 - (map.getLayoutX() - 250))/40).canCross()) {
+    else if(e.getCode() == KeyCode.DOWN && w.getTile((int) (y-map.getLayoutY())/40 + 1, (int) (x - 250 - (map.getLayoutX() - 250))/40).canCross()) {
+        if(y < 580) {
         Player.setLayoutY(Player.getLayoutY() + 40); 
         System.out.println(map.getLayoutY());
         }
@@ -198,26 +198,26 @@ public class LayeredGUIController implements Initializable {
 
         }
     }
-     if(e.getCode() == KeyCode.RIGHT){
-        if ( x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()) {
+     if(e.getCode() == KeyCode.RIGHT && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()){
+        if ( x < 890) {
         Player.setLayoutX(Player.getLayoutX() + 40); 
         System.out.println(Player.getLayoutX());
         }
-        if(x == 890) {
-            map.setLayoutX(map.getLayoutX() - 890);
+        else if(x == 890) {
+            map.setLayoutX(map.getLayoutX() - 680);
             Player.setLayoutX(250);
             paintMonsters();
         }
         }
-    else if(e.getCode() == KeyCode.LEFT){
-        if (  x > 250 && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()) {
+    else if(e.getCode() == KeyCode.LEFT && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()){
+        if (  x > 250) {
         Player.setLayoutX(Player.getLayoutX() - 40);   
         System.out.println(map.getLayoutX());
         }
         
         if(x == 250 ) {
            if (!(map.getLayoutX() == 250)) {
-            map.setLayoutX(map.getLayoutX() + 890);
+            map.setLayoutX(map.getLayoutX() + 680);
             Player.setLayoutX(890);
             paintMonsters();
         }
