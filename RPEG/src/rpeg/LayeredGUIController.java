@@ -29,6 +29,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -64,6 +65,11 @@ public class LayeredGUIController implements Initializable {
     private Player pc = new Player();
     @FXML
     private Pane CombatScreen;
+    
+    @FXML
+    private Label playerHealth;
+    @FXML
+    private Label enemyHealth;
     
     private WorldMap w = RPEG.w;
     private Monster fightMe;
@@ -252,16 +258,28 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void hit(){
-        int monsterHealth = fightMe.getHealth();
-        int playerHealth = pc.getHealth();
-        
+        int mBH = fightMe.getBaseHealth();
+        int mCH = fightMe.getCurrentHealth();
+        enemyHealth.setText(mCH + "/" + mBH);
+        int mD = fightMe.getDef();
+        int pA = pc.getAtk();
+        mCH = mCH - (pA - mD);
+        enemyHealth.setText(mCH + "/" + mBH);
+        if(mCH == 0){
+            playerHealth.setText("VICTORY!!!!");
+            enemyHealth.setText("VICTORY!!!!");
+            delay(4);
+            CombatScreen.setVisible(false);
+            MapScreen.setVisible(true);
+        }
     }
     
     public void enemyHit(){
+        int pHB = pc.getBaseHealth();
         
     }
     
-    }
+}
     
 
 
