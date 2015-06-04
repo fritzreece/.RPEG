@@ -13,7 +13,7 @@ public interface Combatant {
     
     public void attack(int atk, int def);
     
-    public void levelUp(int atk, int def, int speed, int health);
+    public void levelUp();
     
     public int getAtk();
     

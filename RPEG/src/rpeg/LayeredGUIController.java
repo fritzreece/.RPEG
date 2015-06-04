@@ -66,7 +66,7 @@ public class LayeredGUIController implements Initializable {
     private Pane CombatScreen;
     
     private WorldMap w = RPEG.w;
-    
+    private Monster fightMe;
     private ArrayList<ImageView> Mobs = new ArrayList();
     private ArrayList<Monster> MobsObjects = new ArrayList();
     
@@ -154,7 +154,7 @@ public class LayeredGUIController implements Initializable {
     
     private void paintMonsters(){
         for(Monster m : MobsObjects){
-            if((m.getX()*40 > map.getLayoutX() && map.getLayoutX()+600 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+890> m.getX()*40)){
+            if((m.getX()*40 > map.getLayoutX() - 250  && map.getLayoutX()+600 -250 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+900> m.getY()*40)){
                 Mobs.get(MobsObjects.indexOf(m)).setVisible(true);
             }
             else{
@@ -173,8 +173,8 @@ public class LayeredGUIController implements Initializable {
          
      
         
-     if(e.getCode() == KeyCode.UP ){
-        if(y > 0 &&  w.getTile(((int) (y-map.getLayoutY())/40) - 1, (int) ((x - 250 - (map.getLayoutX() - 250))/40)).canCross()) {
+     if(e.getCode() == KeyCode.UP  &&  w.getTile(((int) (y-map.getLayoutY())/40) - 1, (int) ((x - 250 - (map.getLayoutX() - 250))/40)).canCross()){
+        if(y > 0) {
         Player.setLayoutY(Player.getLayoutY() - 40);
         
         }
@@ -188,8 +188,8 @@ public class LayeredGUIController implements Initializable {
         
         }
      }
-    else if(e.getCode() == KeyCode.DOWN) {
-        if(y < 580 && w.getTile((int) (y-map.getLayoutY())/40 + 1, (int) (x - 250 - (map.getLayoutX() - 250))/40).canCross()) {
+    else if(e.getCode() == KeyCode.DOWN && w.getTile((int) (y-map.getLayoutY())/40 + 1, (int) (x - 250 - (map.getLayoutX() - 250))/40).canCross()) {
+        if(y < 580) {
         Player.setLayoutY(Player.getLayoutY() + 40); 
         System.out.println(map.getLayoutY());
         }
@@ -220,7 +220,7 @@ public class LayeredGUIController implements Initializable {
         
         if(x == 250 ) {
            if (!(map.getLayoutX() == 250)) {
-            map.setLayoutX(map.getLayoutX() + 890);
+            map.setLayoutX(map.getLayoutX() + 680);
             Player.setLayoutX(890);
             paintMonsters();
         }
@@ -235,6 +235,8 @@ public class LayeredGUIController implements Initializable {
             RPEG.primaryStage.setWidth(1226);
         RPEG.primaryStage.setHeight(730);
             CombatScreen.setVisible(true);
+            fightMe = MobsObjects.get(0);
+            
         }
     }
     
@@ -250,18 +252,18 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void hit(){
-        int monsterHealth = mob.getHealth();
+        int monsterHealth = fightMe.getHealth();
         int playerHealth = pc.getHealth();
         
-    
     }
     
     public void enemyHit(){
         
     }
+    
     }
     
-}
+
 
 
 /*

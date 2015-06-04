@@ -6,6 +6,7 @@
 package rpeg;
 
 import BackEnd.WorldMap;
+import BackEnd.Player;
 import com.sun.javaws.Main;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -53,6 +54,7 @@ public class RPEG extends Application {
      */ 
 public static void main(String[] args) {
         Application.launch(RPEG.class, (java.lang.String[])null);
+        Player userPlayer = new Player();
     }
     
     
