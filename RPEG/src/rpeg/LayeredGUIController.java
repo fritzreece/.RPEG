@@ -10,6 +10,7 @@
 package rpeg;
 
 
+import BackEnd.MapMob;
 import BackEnd.Player;
 import BackEnd.Monster;
 import BackEnd.TileType;
@@ -35,6 +36,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javax.imageio.stream.ImageInputStream;
 import static rpeg.RPEG.w;
+import rpeg.RPEG.*;
 
 
 /**
@@ -59,6 +61,7 @@ public class LayeredGUIController implements Initializable {
     private Button InventoryButton;
     @FXML
     private ImageView Player;
+    private Player pc = new Player();
     @FXML
     private Pane CombatScreen;
     
@@ -76,6 +79,8 @@ public class LayeredGUIController implements Initializable {
           Image image = new Image("file:map.png");
           map.setImage(image);
           populateMap();
+          map.requestFocus();
+          paintMonsters();
     }         
    
         // TODO
@@ -147,6 +152,16 @@ public class LayeredGUIController implements Initializable {
         Platform.exit();
     }
     
+    private void paintMonsters(){
+        for(Monster m : MobsObjects){
+            if((m.getX()*40 > map.getLayoutX() && map.getLayoutX()+600 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+890> m.getX()*40)){
+                Mobs.get(MobsObjects.indexOf(m)).setVisible(true);
+            }
+            else{
+                Mobs.get(MobsObjects.indexOf(m)).setVisible(false);
+            }
+        }
+    }
 
 
     @FXML
@@ -167,6 +182,7 @@ public class LayeredGUIController implements Initializable {
           if(!(map.getLayoutY() == 0)) {
               map.setLayoutY(map.getLayoutY() + 600);
               Player.setLayoutY(600); 
+              paintMonsters();
           }
           
         
@@ -181,22 +197,40 @@ public class LayeredGUIController implements Initializable {
           
               map.setLayoutY(map.getLayoutY() - 600);
               Player.setLayoutY(0); 
+              paintMonsters();
 
         }
     }
-     if(e.getCode() == KeyCode.RIGHT && x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()){
-        
-        Player.setLayoutX(Player.getLayoutX() + 40);     
+     if(e.getCode() == KeyCode.RIGHT){
+        if ( x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()) {
+        Player.setLayoutX(Player.getLayoutX() + 40); 
+        System.out.println(Player.getLayoutX());
         }
-    else if(e.getCode() == KeyCode.LEFT && x > 250 && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()){
+        if(x == 890) {
+            map.setLayoutX(map.getLayoutX() - 890);
+            Player.setLayoutX(250);
+            paintMonsters();
+        }
+        }
+    else if(e.getCode() == KeyCode.LEFT){
+        if (  x > 250 && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()) {
+        Player.setLayoutX(Player.getLayoutX() - 40);   
+        System.out.println(map.getLayoutX());
+        }
         
-        Player.setLayoutX(Player.getLayoutX() - 40);     
+        if(x == 250 ) {
+           if (!(map.getLayoutX() == 250)) {
+            map.setLayoutX(map.getLayoutX() + 890);
+            Player.setLayoutX(890);
+            paintMonsters();
+        }
+        }
         }
      
      
     x = (int) Player.getLayoutX();
     y = (int) Player.getLayoutY();
-    if(monsterOverlap((x-250)/40, y/40)) {
+    if(monsterOverlap((int) ((x-250- (map.getLayoutX() - 250))/40), (int) ((y-map.getLayoutY())/40))) {
             MapScreen.setVisible(false);
             RPEG.primaryStage.setWidth(1226);
         RPEG.primaryStage.setHeight(730);
@@ -217,8 +251,14 @@ public class LayeredGUIController implements Initializable {
     
     public void hit(){
         int monsterHealth = mob.getHealth();
-        int playerHealth = character.getHealth();
+        int playerHealth = pc.getHealth();
+        
     
+    }
+    
+    public void enemyHit(){
+        
+    }
     }
     
 }
