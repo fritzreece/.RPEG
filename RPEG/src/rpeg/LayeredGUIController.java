@@ -201,19 +201,19 @@ public class LayeredGUIController implements Initializable {
 
         }
     }
-     if(e.getCode() == KeyCode.RIGHT){
-        if ( x < 860 && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()) {
+     if(e.getCode() == KeyCode.RIGHT && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()){
+        if ( x < 890) {
         Player.setLayoutX(Player.getLayoutX() + 40); 
         System.out.println(Player.getLayoutX());
         }
-        if(x == 890) {
-            map.setLayoutX(map.getLayoutX() - 890);
+        else if(x == 890) {
+            map.setLayoutX(map.getLayoutX() - 680);
             Player.setLayoutX(250);
             paintMonsters();
         }
         }
-    else if(e.getCode() == KeyCode.LEFT){
-        if (  x > 250 && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()) {
+    else if(e.getCode() == KeyCode.LEFT && w.getTile((int) (y-map.getLayoutY())/40, (((int) (x - 250 - (map.getLayoutX() - 250)))/40)-1).canCross()){
+        if (  x > 250) {
         Player.setLayoutX(Player.getLayoutX() - 40);   
         System.out.println(map.getLayoutX());
         }
