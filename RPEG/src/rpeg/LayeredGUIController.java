@@ -239,11 +239,18 @@ public class LayeredGUIController implements Initializable {
     x = (int) Player.getLayoutX();
     y = (int) Player.getLayoutY();
     if(monsterOverlap((int) ((x-250- (map.getLayoutX() - 250))/40), (int) ((y-map.getLayoutY())/40))) {
+        Monster m = null;
+        for(Monster a : MobsObjects) {
+            if(a.getX() == (x-250- (map.getLayoutX() - 250))/40 && a.getY() == (int)((y-map.getLayoutY())/40)) {
+            m = a;
+        }
+        }
             MapScreen.setVisible(false);
             RPEG.primaryStage.setWidth(1226);
         RPEG.primaryStage.setHeight(730);
             CombatScreen.setVisible(true);
-            fightMe = MobsObjects.get(0);
+            
+            fightMe = MobsObjects.get(MobsObjects.indexOf(m));
             
         }
     }
@@ -270,6 +277,8 @@ public class LayeredGUIController implements Initializable {
             enemyHealth.setText("VICTORY!!!!");
             delay(4);
             CombatScreen.setVisible(false);
+            MobsObjects.remove(MobsObjects.indexOf(fightMe));
+            MapScreen.getChildren().remove(Mobs.remove(MobsObjects.indexOf(fightMe)));
             MapScreen.setVisible(true);
         }
         else{
@@ -309,11 +318,9 @@ public class LayeredGUIController implements Initializable {
             delay(1);
             img = new Image("/Textures/EnemyShoot.png");
             MonsterCombat.setImage(img);
-            //Change picture to the enemy shooting
             delay(0.2);
             img = new Image("/Textures/EnemyStand.png");
             MonsterCombat.setImage(img);
-            //Change picture to the enemy standing
             pCH = pCH - (mA - pD);
             playerHealth.setText(pCH + "/" + pBH);
         }
@@ -329,13 +336,12 @@ public class LayeredGUIController implements Initializable {
     public void playerHit(){
         
         Image img = new Image("/Textures/PlayerSlash.png");
-        PlayerCombat.setImage(img);//Change picture to the guy hitting
+        PlayerCombat.setImage(img);
     }
     
     public void playerStand(){
         Image img = new Image("/Textures/PlayerStand.png");
         PlayerCombat.setImage(img);
-        //Change picture to the guy standing
     }
     
     
