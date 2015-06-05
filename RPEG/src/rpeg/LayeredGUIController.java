@@ -70,7 +70,9 @@ public class LayeredGUIController implements Initializable {
     private Label playerHealth;
     @FXML
     private Label enemyHealth;
-    
+   @FXML
+   private ImageView PlayerCombat;
+   private ImageView MonsterCombat;
     private WorldMap w = RPEG.w;
     private Monster fightMe;
     private ArrayList<ImageView> Mobs = new ArrayList();
@@ -286,7 +288,10 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void enemyHit(){
-        playerHealth.setText("READY!");
+        Image img = new Image("/Textures/PlayerStand.png");
+        PlayerCombat.setImage(img);
+        img = new Image("/Textures/EnemyStand.png");
+        MonsterCombat.setImage(img);
         enemyHealth.setText("READY!");
         delay(3);
         playerHealth.setText("GO!");
@@ -302,8 +307,12 @@ public class LayeredGUIController implements Initializable {
         
         while(checkAlive(pCH)){
             delay(1);
+            img = new Image("/Textures/EnemyShoot.png");
+            MonsterCombat.setImage(img);
             //Change picture to the enemy shooting
             delay(0.2);
+            img = new Image("/Textures/EnemyStand.png");
+            MonsterCombat.setImage(img);
             //Change picture to the enemy standing
             pCH = pCH - (mA - pD);
             playerHealth.setText(pCH + "/" + pBH);
@@ -318,11 +327,14 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void playerHit(){
-        //Change picture to the guy hitting
-        //REMEMBER TO MOVE THE ENEMY HEALTH BOX BECAUSE IT'S ON TOP OF THE PLAYER HEALTH BOX RIGHT NOW
+        
+        Image img = new Image("/Textures/PlayerSlash.png");
+        PlayerCombat.setImage(img);//Change picture to the guy hitting
     }
     
     public void playerStand(){
+        Image img = new Image("/Textures/PlayerStand.png");
+        PlayerCombat.setImage(img);
         //Change picture to the guy standing
     }
     
