@@ -151,7 +151,7 @@ public class LayeredGUIController implements Initializable {
     
     private void paintMonsters(){
         for(Monster m : MobsObjects){
-            if((m.getX()*40 > map.getLayoutX() - 250  && map.getLayoutX()+600 -250 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+900> m.getY()*40)){
+            if((m.getX()*40 > map.getLayoutX() - 250  && map.getLayoutX()+600 -250 > m.getX()*40) && (m.getY()*40 > map.getLayoutY() && map.getLayoutY()+600> m.getY()*40)){
                 Mobs.get(MobsObjects.indexOf(m)).setVisible(true);
             }
             else{
@@ -198,6 +198,7 @@ public class LayeredGUIController implements Initializable {
 
         }
     }
+    
      if(e.getCode() == KeyCode.RIGHT && w.getTile(((int) (y-map.getLayoutY())/40) , (((int) (x - 250 - (map.getLayoutX() - 250)))/40)+1).canCross()){
         if ( x < 890) {
         Player.setLayoutX(Player.getLayoutX() + 40); 

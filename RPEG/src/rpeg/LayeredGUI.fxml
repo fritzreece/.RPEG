@@ -80,8 +80,13 @@
             <Label fx:id="currentHealth" layoutX="276.0" layoutY="18.0" text="Current" />
          </children>
       </Pane>
-      <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0" visible="false">
+      <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0">
          <children>
+            <ImageView fitHeight="3118.0" fitWidth="5009.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Users/csstudent/Desktop/1511735.jpg" />
+               </image>
+            </ImageView>
             <ImageView id="Map" fx:id="map" layoutX="250.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../map.png" />
