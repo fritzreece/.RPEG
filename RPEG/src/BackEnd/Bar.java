@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package BackEnd;
-
+import rpeg.LayeredGUIController;
 /**
  *
  * @author jwsti_000
@@ -12,7 +12,6 @@ package BackEnd;
 public class Bar {
     
     public void updateBar(Combatant combatant){
-        combatant.attack(combatant.getAtk(), combatant.getDef());
         
     }
 }

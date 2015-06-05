@@ -11,6 +11,7 @@ package rpeg;
 
 
 import BackEnd.MapMob;
+import BackEnd.Player;
 import BackEnd.Monster;
 import BackEnd.TileType;
 import BackEnd.WorldMap;
@@ -28,6 +29,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -35,6 +37,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javax.imageio.stream.ImageInputStream;
 import static rpeg.RPEG.w;
+import rpeg.RPEG.*;
 
 
 /**
@@ -59,11 +62,17 @@ public class LayeredGUIController implements Initializable {
     private Button InventoryButton;
     @FXML
     private ImageView Player;
+    private Player pc = new Player();
     @FXML
     private Pane CombatScreen;
     
-    private WorldMap w = RPEG.w;
+    @FXML
+    private Label playerHealth;
+    @FXML
+    private Label enemyHealth;
     
+    private WorldMap w = RPEG.w;
+    private Monster fightMe;
     private ArrayList<ImageView> Mobs = new ArrayList();
     private ArrayList<Monster> MobsObjects = new ArrayList();
     
@@ -233,9 +242,95 @@ public class LayeredGUIController implements Initializable {
             RPEG.primaryStage.setWidth(1226);
         RPEG.primaryStage.setHeight(730);
             CombatScreen.setVisible(true);
+            fightMe = MobsObjects.get(0);
+            
         }
     }
+    
+    public static void delay(double seconds){
+		long t0;
+		long t1;
+		t0= System.currentTimeMillis();
+		do{
+			t1= System.currentTimeMillis();
+		}
+		while(t1-t0 < 1000 * seconds);
+		return;
+    }
+    
+    public void hit(){
+        int mBH = fightMe.getBaseHealth();
+        int mCH = fightMe.getCurrentHealth();
+        int mD = fightMe.getDef();
+        int pA = pc.getAtk();
+        mCH = mCH - (pA - mD);
+        if(checkAlive(mCH) == false){
+            playerHealth.setText("VICTORY!!!!");
+            enemyHealth.setText("VICTORY!!!!");
+            delay(4);
+            CombatScreen.setVisible(false);
+            MapScreen.setVisible(true);
+        }
+        else{
+            enemyHealth.setText(mCH + "/" + mBH);
+        }
+    }
+    
+    public boolean checkAlive(int combatantHealth){
+        String battleState = enemyHealth.getText();
+        if(combatantHealth > 0 && !battleState.equals("VICTORY!!!!") && !battleState.equals("Defeat...")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public void enemyHit(){
+        playerHealth.setText("READY!");
+        enemyHealth.setText("READY!");
+        delay(3);
+        playerHealth.setText("GO!");
+        enemyHealth.setText("GO!");
+        int pBH = pc.getBaseHealth();
+        int pCH = pc.getCurrentHealth();
+        int mBH = fightMe.getBaseHealth();
+        int mCH = fightMe.getCurrentHealth();
+        playerHealth.setText(pCH + "/" + pBH);
+        enemyHealth.setText(mCH + "/" + mBH);
+        int pD = fightMe.getDef();
+        int mA = pc.getAtk();
+        
+        while(checkAlive(pCH)){
+            delay(1);
+            //Change picture to the enemy shooting
+            delay(0.2);
+            //Change picture to the enemy standing
+            pCH = pCH - (mA - pD);
+            playerHealth.setText(pCH + "/" + pBH);
+        }
+        if(!checkAlive(pCH)){
+            playerHealth.setText("Defeat...");
+            enemyHealth.setText("Defeat...");
+            delay(4);
+            CombatScreen.setVisible(false);
+            MapScreen.setVisible(true);
+        }
+    }
+    
+    public void playerHit(){
+        //Change picture to the guy hitting
+        //REMEMBER TO MOVE THE ENEMY HEALTH BOX BECAUSE IT'S ON TOP OF THE PLAYER HEALTH BOX RIGHT NOW
+    }
+    
+    public void playerStand(){
+        //Change picture to the guy standing
+    }
+    
+    
 }
+    
+
 
 
 /*
@@ -243,6 +338,8 @@ public class LayeredGUIController implements Initializable {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//setText? settext?
 
 
     

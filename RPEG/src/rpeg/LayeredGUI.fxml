@@ -12,7 +12,7 @@
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1226.0" style="-fx-background-image: &quot;rpeg.Texture/BattleBackground.png&quot;; -fx-background-repeat: stretch; -fx-background-position: center center;" visible="false">
          <children>
-            <Button fx:id="hitButton" mnemonicParsing="false" opacity="0.0" prefHeight="462.0" prefWidth="488.0" text="Button" />
+            <Button fx:id="hitButton" mnemonicParsing="false" onMouseClicked="#hit" onMouseMoved="#enemyHit" opacity="0.0" prefHeight="730.0" prefWidth="1226.0" text="Button" />
             <Accordion prefHeight="619.0" prefWidth="202.0">
                <panes>
                   <TitledPane animated="false" text="Spells">
@@ -76,8 +76,8 @@
                   </TitledPane>
                </panes>
             </Accordion>
-            <Label layoutX="216.0" layoutY="14.0" prefHeight="25.0" prefWidth="60.0" text="Health" />
-            <Label fx:id="currentHealth" layoutX="276.0" layoutY="18.0" text="Current" />
+            <Label fx:id="playerHealth" layoutX="216.0" layoutY="14.0" prefHeight="25.0" prefWidth="60.0" text="Health" />
+            <Label layoutX="276.0" layoutY="18.0" text="Current" />
          </children>
       </Pane>
       <Pane fx:id="MapScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="948.0">

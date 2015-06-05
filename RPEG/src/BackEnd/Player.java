@@ -7,15 +7,22 @@ package BackEnd;
 
 import java.net.URL;
 
+
 /**
  *
  * @author csstudent
  */
-public class Player implements MapMob{
+public class Player implements MapMob, Combatant{
     private int xCoord;
     private int yCoord;
     private Direction direction;
-    
+    private int atk = 3;
+    private int def = 3;
+    private int speed = 2;
+    private int currentHealth = 10;
+    private int baseHealth = 10;
+    private int level = 1;
+
  
     public boolean move() {
         if(direction == Direction.SOUTH){
@@ -106,4 +113,41 @@ public class Player implements MapMob{
     public URL getSprite() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public void levelUp(){
+        atk += 2;
+        def += 2;
+        speed += 2;
+        baseHealth += 5;
+        level += 1;
+    }
+    
+    @Override
+    public int getHealth(){
+        return currentHealth;
+    }
+    
+    @Override
+    public int getAtk(){
+        return atk;
+    }
+    
+    @Override
+    public int getDef(){
+        return def;
+    }
+    
+    @Override
+    public int getSpeed(){
+        return speed;
+    }
+    
+    @Override
+    public void attack(int ATK, int DEF){
+        
+    }
+    
 }
+
+//public void attack(int atk, int def);
