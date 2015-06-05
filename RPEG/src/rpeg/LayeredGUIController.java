@@ -260,24 +260,72 @@ public class LayeredGUIController implements Initializable {
     public void hit(){
         int mBH = fightMe.getBaseHealth();
         int mCH = fightMe.getCurrentHealth();
-        enemyHealth.setText(mCH + "/" + mBH);
         int mD = fightMe.getDef();
         int pA = pc.getAtk();
         mCH = mCH - (pA - mD);
-        enemyHealth.setText(mCH + "/" + mBH);
-        if(mCH == 0){
+        if(checkAlive(mCH) == false){
             playerHealth.setText("VICTORY!!!!");
             enemyHealth.setText("VICTORY!!!!");
             delay(4);
             CombatScreen.setVisible(false);
             MapScreen.setVisible(true);
         }
+        else{
+            enemyHealth.setText(mCH + "/" + mBH);
+        }
+    }
+    
+    public boolean checkAlive(int combatantHealth){
+        String battleState = enemyHealth.getText();
+        if(combatantHealth > 0 && !battleState.equals("VICTORY!!!!") && !battleState.equals("Defeat...")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     public void enemyHit(){
-        int pHB = pc.getBaseHealth();
+        playerHealth.setText("READY!");
+        enemyHealth.setText("READY!");
+        delay(3);
+        playerHealth.setText("GO!");
+        enemyHealth.setText("GO!");
+        int pBH = pc.getBaseHealth();
+        int pCH = pc.getCurrentHealth();
+        int mBH = fightMe.getBaseHealth();
+        int mCH = fightMe.getCurrentHealth();
+        playerHealth.setText(pCH + "/" + pBH);
+        enemyHealth.setText(mCH + "/" + mBH);
+        int pD = fightMe.getDef();
+        int mA = pc.getAtk();
         
+        while(checkAlive(pCH)){
+            delay(1);
+            //Change picture to the enemy shooting
+            delay(0.2);
+            //Change picture to the enemy standing
+            pCH = pCH - (mA - pD);
+            playerHealth.setText(pCH + "/" + pBH);
+        }
+        if(!checkAlive(pCH)){
+            playerHealth.setText("Defeat...");
+            enemyHealth.setText("Defeat...");
+            delay(4);
+            CombatScreen.setVisible(false);
+            MapScreen.setVisible(true);
+        }
     }
+    
+    public void playerHit(){
+        //Change picture to the guy hitting
+        //REMEMBER TO MOVE THE ENEMY HEALTH BOX BECAUSE IT'S ON TOP OF THE PLAYER HEALTH BOX RIGHT NOW
+    }
+    
+    public void playerStand(){
+        //Change picture to the guy standing
+    }
+    
     
 }
     
