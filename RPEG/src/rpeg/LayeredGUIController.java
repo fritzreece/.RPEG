@@ -40,6 +40,7 @@ import static rpeg.RPEG.w;
 import rpeg.RPEG.*;
 
 
+
 /**
  * FXML Controller class
  *
@@ -72,7 +73,10 @@ public class LayeredGUIController implements Initializable {
     private Label enemyHealth;
    @FXML
    private ImageView PlayerCombat;
+   @FXML
    private ImageView MonsterCombat;
+   
+           
     private WorldMap w = RPEG.w;
     private Monster fightMe;
     private ArrayList<ImageView> Mobs = new ArrayList();
@@ -253,7 +257,7 @@ public class LayeredGUIController implements Initializable {
             CombatScreen.setVisible(true);
             enemyHit();
             
-            fightMe = m;
+            fightMe = MobsObjects.get(0);
             
         }
     }
@@ -271,7 +275,7 @@ public class LayeredGUIController implements Initializable {
     
     public void hit(){
         int mBH = 5;//fightMe.getBaseHealth();
-        int mCH = 5;//fightMe.getCurrentHealth();
+        int mCH = 100;//fightMe.getCurrentHealth();
         int mD = fightMe.getDef();
         int pA = pc.getAtk();
         mCH = mCH - (pA - mD);
@@ -303,11 +307,13 @@ public class LayeredGUIController implements Initializable {
     
     public void enemyHit(){
         File file = new File("PlayerStand.png");
+        String path = file.getAbsolutePath();
         
          InputStream is = getClass().getResourceAsStream("/rpeg/Textures/PlayerStand.png");
         Image img = new Image(is);
         PlayerCombat.setImage(img);
-        img = new Image("file:/src//Textures/EnemyStand.png");
+        is = getClass().getResourceAsStream("/rpeg/Textures/EnemyStand.png");
+        img = new Image(is);
         MonsterCombat.setImage(img);
         enemyHealth.setText("READY!");
         delay(3);
@@ -324,19 +330,19 @@ public class LayeredGUIController implements Initializable {
         
         while(checkAlive(pCH)){
             delay(1);
-            img = new Image("file:rpeg/Textures/EnemyShoot.png");
-            MonsterCombat.setImage(img);
+           // img = new Image("file:rpeg/Textures/EnemyShoot.png");
+            //MonsterCombat.setImage(img);
             delay(0.2);
-            img = new Image("file:rpeg/Textures/EnemyStand.png");
-            MonsterCombat.setImage(img);
+           // img = new Image("file:rpeg/Textures/EnemyStand.png");
+            //MonsterCombat.setImage(img);
             pCH = pCH - (mA - pD);
             playerHealth.setText(pCH + "/" + pBH);
         }
         if(!checkAlive(pCH)){
             playerHealth.setText("Defeat...");
             enemyHealth.setText("Defeat...");
-            Image otherIMG = new Image("file:rpeg/Textures/PlayerDead.png");
-            PlayerCombat.setImage(otherIMG);
+            //Image otherIMG = new Image("file:rpeg/Textures/PlayerDead.png");
+           // PlayerCombat.setImage(otherIMG);
             delay(4);
             CombatScreen.setVisible(false);
             MapScreen.setVisible(true);
@@ -345,13 +351,13 @@ public class LayeredGUIController implements Initializable {
     
     public void playerHit(){
         
-        Image img = new Image("file:rpeg/Textures/PlayerSlash.png");
-        PlayerCombat.setImage(img);
+      //  Image img = new Image("file:rpeg/Textures/PlayerSlash.png");
+        //PlayerCombat.setImage(img);
     }
     
     public void playerStand(){
-        Image img = new Image("file:rpeg/Textures/PlayerStand.png");
-        PlayerCombat.setImage(img);
+        //Image img = new Image("file:rpeg/Textures/PlayerStand.png");
+        //PlayerCombat.setImage(img);
     }
     
     
