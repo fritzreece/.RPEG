@@ -77,6 +77,7 @@ public class WorldMap {
         tiles[7][16].setTileType(TileType.WALL);
         tiles[17][8].setTileType(TileType.WALL);
         Graphics2D ig2 = bi.createGraphics();
+        
         for (int i = 0; i < width / 40; i++) {
             for (int j = 0; j < height / 40; j++) {
                 if (tiles[i][j].getTileType() == TileType.GRASS) {

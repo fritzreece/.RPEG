@@ -270,8 +270,8 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void hit(){
-        int mBH = fightMe.getBaseHealth();
-        int mCH = fightMe.getCurrentHealth();
+        int mBH = 5;//fightMe.getBaseHealth();
+        int mCH = 5;//fightMe.getCurrentHealth();
         int mD = fightMe.getDef();
         int pA = pc.getAtk();
         mCH = mCH - (pA - mD);
@@ -313,10 +313,10 @@ public class LayeredGUIController implements Initializable {
         delay(3);
         playerHealth.setText("GO!");
         enemyHealth.setText("GO!");
-        int pBH = pc.getBaseHealth();
-        int pCH = pc.getCurrentHealth();
-        int mBH = fightMe.getBaseHealth();
-        int mCH = fightMe.getCurrentHealth();
+        int pBH = 5;//pc.getBaseHealth();
+       int pCH = 5;//pc.getCurrentHealth();
+        int mBH = 5;//fightMe.getBaseHealth();
+        int mCH = 5;//fightMe.getCurrentHealth();
         playerHealth.setText(pCH + "/" + pBH);
         enemyHealth.setText(mCH + "/" + mBH);
         int pD = fightMe.getDef();
