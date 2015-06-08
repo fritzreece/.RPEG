@@ -70,7 +70,9 @@ public class LayeredGUIController implements Initializable {
     private Label playerHealth;
     @FXML
     private Label enemyHealth;
-    
+   @FXML
+   private ImageView PlayerCombat;
+   private ImageView MonsterCombat;
     private WorldMap w = RPEG.w;
     private Monster fightMe;
     private ArrayList<ImageView> Mobs = new ArrayList();
@@ -86,6 +88,7 @@ public class LayeredGUIController implements Initializable {
           map.setImage(image);
           populateMap();
           map.requestFocus();
+          
           paintMonsters();
     }         
    
@@ -238,11 +241,19 @@ public class LayeredGUIController implements Initializable {
     x = (int) Player.getLayoutX();
     y = (int) Player.getLayoutY();
     if(monsterOverlap((int) ((x-250- (map.getLayoutX() - 250))/40), (int) ((y-map.getLayoutY())/40))) {
+        Monster m = null;
+        for(Monster a : MobsObjects) {
+            if(a.getX() == (x-250- (map.getLayoutX() - 250))/40 && a.getY() == (int)((y-map.getLayoutY())/40)) {
+            m = a;
+        }
+        }
             MapScreen.setVisible(false);
             RPEG.primaryStage.setWidth(1226);
         RPEG.primaryStage.setHeight(730);
             CombatScreen.setVisible(true);
-            fightMe = MobsObjects.get(0);
+            enemyHit();
+            
+            fightMe = m;
             
         }
     }
@@ -267,8 +278,12 @@ public class LayeredGUIController implements Initializable {
         if(checkAlive(mCH) == false){
             playerHealth.setText("VICTORY!!!!");
             enemyHealth.setText("VICTORY!!!!");
+            Image img = new Image("file:rpeg/Textures/EnemyDead.png");
+            MonsterCombat.setImage(img);
             delay(4);
             CombatScreen.setVisible(false);
+            MobsObjects.remove(MobsObjects.indexOf(fightMe));
+            MapScreen.getChildren().remove(Mobs.remove(MobsObjects.indexOf(fightMe)));
             MapScreen.setVisible(true);
         }
         else{
@@ -287,7 +302,13 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void enemyHit(){
-        playerHealth.setText("READY!");
+        File file = new File("PlayerStand.png");
+        
+         InputStream is = getClass().getResourceAsStream("/rpeg/Textures/PlayerStand.png");
+        Image img = new Image(is);
+        PlayerCombat.setImage(img);
+        img = new Image("file:/src//Textures/EnemyStand.png");
+        MonsterCombat.setImage(img);
         enemyHealth.setText("READY!");
         delay(3);
         playerHealth.setText("GO!");
@@ -303,15 +324,19 @@ public class LayeredGUIController implements Initializable {
         
         while(checkAlive(pCH)){
             delay(1);
-            //Change picture to the enemy shooting
+            img = new Image("file:rpeg/Textures/EnemyShoot.png");
+            MonsterCombat.setImage(img);
             delay(0.2);
-            //Change picture to the enemy standing
+            img = new Image("file:rpeg/Textures/EnemyStand.png");
+            MonsterCombat.setImage(img);
             pCH = pCH - (mA - pD);
             playerHealth.setText(pCH + "/" + pBH);
         }
         if(!checkAlive(pCH)){
             playerHealth.setText("Defeat...");
             enemyHealth.setText("Defeat...");
+            Image otherIMG = new Image("file:rpeg/Textures/PlayerDead.png");
+            PlayerCombat.setImage(otherIMG);
             delay(4);
             CombatScreen.setVisible(false);
             MapScreen.setVisible(true);
@@ -319,17 +344,20 @@ public class LayeredGUIController implements Initializable {
     }
     
     public void playerHit(){
-        //Change picture to the guy hitting
-        //REMEMBER TO MOVE THE ENEMY HEALTH BOX BECAUSE IT'S ON TOP OF THE PLAYER HEALTH BOX RIGHT NOW
+        
+        Image img = new Image("file:rpeg/Textures/PlayerSlash.png");
+        PlayerCombat.setImage(img);
     }
     
     public void playerStand(){
-        //Change picture to the guy standing
+        Image img = new Image("file:rpeg/Textures/PlayerStand.png");
+        PlayerCombat.setImage(img);
     }
     
     
 }
     
+//312-340-9343
 
 
 
